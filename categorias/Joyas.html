@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyas - Mi Tienda Online</title>
+    <link rel="stylesheet" href="../esti.css"> 
+</head>
+<body>
+
+    <header class="navbar">
+     <div class="logo"><a href="../Princi.html">MI TIENDA</a></div>
+        <input type="text" placeholder="Buscar productos..." class="buscador">
+        <nav class="nav-links">
+            <a href="#">Hombre</a>
+            <a href="#">Mujer</a>
+            <a href="Relojes.html">Relojes</a> <a href="Perfumes.html">Perfumes</a> <a href="#">Zapatos</a>
+             <a href="#">Ofertas</a>
+        </nav>
+        <div class="icons">
+            <div id="user-info">
+                <button onclick="abrirModal()" class="btn-login" id="btn-login">Iniciar sesión</button>
+                <span id="saludo" class="hidden">Hola, <span id="usuario-nombre"></span></span>
+                <button id="cerrar-sesion" class="hidden">Cerrar sesión</button>
+            </div>
+            <span>❤️</span>
+            <span>🛒</span>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../Princi.html">Home</a> &gt; Joyas
+    </div>
+
+    <div class="product-header">
+        <h1>Joyas</h1>
+        <div class="sort-options">
+            <span>29,984 resultados</span> |
+            <label for="sort">CLASIFICAR:</label>
+            <select id="sort">
+                <option value="most_viewed">Mas Visto</option>
+                <option value="price_asc">Precio: bajo a alto</option>
+                <option value="price_desc">Precio: Alto a bajo</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="product-page-container">
+        <aside class="filters">
+            <h3>Filters (1)</h3>
+            <div class="filter-group">
+                <h4>Género</h4>
+                <label><input type="checkbox"> Men's</label>
+                <label><input type="checkbox"> Women's</label>
+                <label><input type="checkbox"> Unisex</label>
+            </div>
+            <div class="filter-group">
+                <h4>Precio</h4>
+                <label><input type="checkbox"> Menos de $100</label>
+                <label><input type="checkbox"> $100 - $500</label>
+                <label><input type="checkbox"> $500 - $1000</label>
+                <label><input type="checkbox"> Mas de $1000</label>
+            </div>
+            <div class="filter-group">
+                <h4>Marca</h4>
+                <label><input type="checkbox"> Gucci</label>
+                <label><input type="checkbox"> Salvini</label>
+                <label><input type="checkbox"> Vanrycke</label>
+                <label><input type="checkbox"> Amour</label>
+            </div>
+            </aside>
+
+        <section class="products-grid">
+            <a href="#" class="product-card">
+                <img src="Imagenes1/Ladies.jpg" alt="Gucci">
+                <div class="product-info">
+                    <h3>Gucci</h3>
+                    <p class="brand">Ladies Aged Interlocking G Necklace</p>
+                    <p class="price">
+                        <span class="discount-price">$425.99</span>
+                        <span class="original-price">$510.00</span>
+                    </p>
+                    <p style="font-size:0.8em; color: green; margin-top: 5px;">17% OFF</p>
+                </div>
+            </a>
+            <a href="#" class="product-card">
+                <img src="Imagenes1/Salvini.jpg" alt="Salvini">
+                <div class="product-info">
+                    <h3>Salvini</h3>
+                    <p class="brand">Ladies I Segni Ring With Diamonds, Size 13 20094178</p>
+                    <p class="price">
+                        <span class="discount-price">$178.00</span>
+                        <span class="original-price">$570.00</span>
+                    </p>
+                    <p style="font-size:0.8em; color: green; margin-top: 5px;">69% OFF</p>
+                </div>
+            </a>
+                        <a href="#" class="product-card">
+                <img src="Imagenes1/Gold A.jpg" alt="Vanrycke">
+                <div class="product-info">
+                    <h3>Vanrycke</h3>
+                    <p class="brand">Ladies Abecedaire Rose Gold Letter A Necklace</p>
+                    <p class="price">
+                        <span class="discount-price">$234.00</span>
+                        <span class="original-price">$585.00</span>
+                    </p>
+                    <p style="font-size:0.8em; color: green; margin-top: 5px;">60% OFF</p>
+                </div>
+            </a>
+               <a href="#" class="product-card">
+                <img src="Imagenes1/Amour.jpg" alt="Amour">
+                <div class="product-info">
+                    <h3>Amour</h3>
+                    <p class="brand">1/10ct TDW Black Diamond Men's Double Row Anniversary Band in Yellow Plated Sterling Silver</p>
+                    <p class="price">
+                        <span class="discount-price">$69.00</span>
+                        <span class="original-price">$300.00</span>
+                    </p>
+                    <p style="font-size:0.8em; color: green; margin-top: 5px;">77% OFF</p>
+                </div>
+            </a>
+            </section>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <div id="form-login">
+                <h2>Iniciar Sesión</h2>
+                <input type="email" placeholder="Correo electrónico">
+                <input type="password" placeholder="Contraseña">
+                <button>Entrar</button>
+                <div class="switch-form" onclick="mostrarRegistro()">¿No tienes cuenta? Regístrate</div>
+            </div>
+            <div id="form-register" class="hidden">
+                <h2>Registro</h2>
+                <input type="text" placeholder="Nombre completo">
+                <input type="email" placeholder="Correo electrónico">
+                <input type="password" placeholder="Contraseña">
+                <button>Registrarse</button>
+                <div class="switch-form" onclick="mostrarLogin()">¿Ya tienes cuenta? Inicia sesión</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../jv.js"></script> 
+    <script>
+    </script>
+</body>
+</html>
